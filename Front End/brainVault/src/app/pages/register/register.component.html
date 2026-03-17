@@ -1,0 +1,50 @@
+<div class="register-container d-flex align-items-center justify-content-end">
+
+    <div class="register-card card shadow-lg p-4">
+        <h3 class="text-center mb-4 fw-bold">Create Account</h3>
+
+        <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="registerData.name" required
+                    placeholder="Enter your name">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="registerData.email" required
+                    placeholder="Enter your email">
+            </div>
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="registerData.username" required
+                    placeholder="Choose username">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="registerData.password" required
+                    placeholder="Create password">
+            </div>
+
+            <!-- Button -->
+            <button type="submit" class="btn btn-warning w-100 fw-bold" [disabled]="!registerForm.valid">
+                Register
+            </button>
+
+            <!-- Login redirect -->
+            <div class="text-center mt-3">
+                <span>Already have an account? </span>
+                <a routerLink="/" class="register-link">Login</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
